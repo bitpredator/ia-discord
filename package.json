@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/bitpredator/ia-discord/issues"
   },
-  "homepage": "https://github.com/bitpredator/ia-discord#readme"
+  "homepage": "https://github.com/bitpredator/ia-discord#readme",
+  "dependencies": {
+    "discord.js": "^14.13.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.47.0"
+  }
 }
