@@ -1,0 +1,19 @@
+{
+  "name": "ia-discord",
+  "version": "1.0.0",
+  "description": "Multifunction discord bot, this project aims to combine multiple functions to reduce the presence of many bots within discord servers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitpredator/ia-discord.git"
+  },
+  "author": "bitpredator",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bitpredator/ia-discord/issues"
+  },
+  "homepage": "https://github.com/bitpredator/ia-discord#readme"
+}
