@@ -4,7 +4,9 @@
   "description": "Multifunction discord bot, this project aims to combine multiple functions to reduce the presence of many bots within discord servers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
