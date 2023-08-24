@@ -1,5 +1,7 @@
 {
 	"token": "token",
     "clientId": "clientId",
-	"guildId": "guildId"
+	"guildId": "guildId",
+	"clientSecret": "clientSecret",
+	"port": 53134
 }
