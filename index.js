@@ -4,8 +4,7 @@ const { request } = require('undici');
 const express = require('express');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
-const { token } = require('./config.json');
-const { clientId, clientSecret, port } = require('./config.json')
+const { clientId, clientSecret, port, token } = require('./config.json');
 
 const app = express();
 
@@ -38,7 +37,8 @@ app.get('/', async ({ query }, response) => {
 			});
 
 			console.log(await userResult.body.json());
-		} catch (error) {
+		}
+		catch (error) {
 			// NOTE: An unauthorized token will not throw an error
 			// tokenResponseData.statusCode will be 401
 			console.error(error);
