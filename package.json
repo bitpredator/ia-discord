@@ -21,7 +21,7 @@
   "dependencies": {
     "discord.js": "^14.13.0",
     "express": "^4.18.2",
-    "undici": "^5.24.0"
+    "undici": "^5.25.2"
   },
   "devDependencies": {
     "eslint": "^8.50.0"
