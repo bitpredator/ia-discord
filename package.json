@@ -24,6 +24,6 @@
     "undici": "^6.0.1"
   },
   "devDependencies": {
-    "eslint": "^8.55.0"
+    "eslint": "^8.56.0"
   }
 }
