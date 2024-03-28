@@ -20,7 +20,7 @@
   "homepage": "https://github.com/bitpredator/ia-discord#readme",
   "dependencies": {
     "discord.js": "^14.14.1",
-    "express": "^4.19.1",
+    "express": "^4.19.2",
     "undici": "^6.9.0"
   },
   "devDependencies": {
