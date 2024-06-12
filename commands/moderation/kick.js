@@ -8,6 +8,7 @@ module.exports = {
 	category: 'moderation',
 	async execute(interaction) {
 		const member = interaction.options.getMember('target');
+        member.kick();
 		return interaction.reply({ content: `You wanted to kick: ${member.user.username}`, ephemeral: true });
 	},
 };
