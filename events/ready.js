@@ -4,6 +4,6 @@ module.exports = {
 	name: Events.ClientReady,
 	once: true,
 	execute(client) {
-		console.log(`The bot ${client.user.tag} started successfully`);
+		console.log(`Ready! Logged in as ${client.user.tag}`);
 	},
 };

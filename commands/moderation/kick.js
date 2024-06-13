@@ -1,14 +1,27 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('kick')
-		.setDescription('Select a member and kick them (but not really).')
-		.addUserOption(option => option.setName('target').setDescription('The member to kick').setRequired(true)),
-	category: 'moderation',
-	async execute(interaction) {
-		const member = interaction.options.getMember('target');
-        member.kick();
-		return interaction.reply({ content: `You wanted to kick: ${member.user.username}`, ephemeral: true });
-	},
+		.setDescription('Select a member and kick them.')
+		.addUserOption(option =>
+			option
+				.setName('target')
+				.setDescription('The member to kick')
+				.setRequired(true))
+				.setDefaultMemberPermissions(PermissionFlagsBits.KickMembers)
+				.setDMPermission(false)
+		.addStringOption(option =>
+			option
+				.setName('reason')
+				.setDescription('The reason for Kicked'))
+		.setDefaultMemberPermissions(PermissionFlagsBits.KickMembers)
+		.setDMPermission(false),
+		async execute(interaction) {
+			const target = interaction.options.getUser('target');
+			const reason = interaction.options.getString('reason') ?? 'No reason provided';
+	
+			await interaction.reply(`You Kicked ${target.username} for reason: ${reason}`);
+			await interaction.guild.members.ban(target);
+		},
 };
