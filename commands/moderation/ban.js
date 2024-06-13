@@ -1,14 +1,27 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ban')
-		.setDescription('Select a member and ban them (permanently).')
-		.addUserOption(option => option.setName('target').setDescription('The member to kick').setRequired(true)),
-	category: 'moderation',
-	async execute(interaction) {
-		const member = interaction.options.getMember('target');
-        member.ban();
-		return interaction.reply({ content: `You Banned: ${member.user.username}`, ephemeral: true });
-	},
+		.setDescription('Select a member and ban them.')
+		.addUserOption(option =>
+			option
+				.setName('target')
+				.setDescription('The member to ban')
+				.setRequired(true))
+				.setDefaultMemberPermissions(PermissionFlagsBits.BanMembers)
+				.setDMPermission(false)
+		.addStringOption(option =>
+			option
+				.setName('reason')
+				.setDescription('The reason for banning'))
+		.setDefaultMemberPermissions(PermissionFlagsBits.BanMembers)
+		.setDMPermission(false),
+		async execute(interaction) {
+			const target = interaction.options.getUser('target');
+			const reason = interaction.options.getString('reason') ?? 'No reason provided';
+	
+			await interaction.reply(`You Banned ${target.username} for reason: ${reason}`);
+			await interaction.guild.members.ban(target);
+		},
 };
