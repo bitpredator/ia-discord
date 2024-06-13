@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.15.3",
-    "undici": "^5.23.0"
+    "undici": "^5.28.4"
   },
   "devDependencies": {
     "eslint": "^9.4.0"
