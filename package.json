@@ -4,10 +4,15 @@
   "description": "Discord Community Bot",
   "main": "index.js",
   "scripts": {
-    "test": "?"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "lint": "eslint ."
   },
   "author": "bitpredator",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bitpredator/ia-discord/issues"
+  },
   "dependencies": {
     "discord.js": "^14.15.3",
     "undici": "^5.23.0"
