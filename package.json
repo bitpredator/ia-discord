@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "discord.js": "^14.15.3",
-    "undici": "^6.19.0"
+    "undici": "^6.19.2"
   },
   "devDependencies": {
     "eslint": "^9.6.0"
