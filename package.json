@@ -14,7 +14,10 @@
     "url": "https://github.com/bitpredator/ia-discord/issues"
   },
   "dependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.7.0",
     "discord.js": "^14.15.3",
+    "globals": "^15.8.0",
     "undici": "^6.19.2"
   },
   "devDependencies": {
