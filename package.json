@@ -14,7 +14,9 @@
     "url": "https://github.com/bitpredator/ia-discord/issues"
   },
   "dependencies": {
+    "better-sqlite3": "^11.1.2",
     "discord.js": "^14.15.3",
+    "quick.db": "^9.1.7",
     "undici": "^6.19.4"
   },
   "devDependencies": {

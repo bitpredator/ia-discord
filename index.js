@@ -18,7 +18,8 @@ for (const folder of commandFolders) {
 		const command = require(filePath);
 		if ('data' in command && 'execute' in command) {
 			client.commands.set(command.data.name, command);
-		} else {
+		}
+		else {
 			console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
 		}
 	}
@@ -62,14 +63,30 @@ client.on(Events.InteractionCreate, async interaction => {
 
 	try {
 		await command.execute(interaction);
-	} catch (error) {
+	}
+	catch (error) {
 		console.error(error);
 		if (interaction.replied || interaction.deferred) {
 			await interaction.followUp({ content: 'There was an error while executing this command!', ephemeral: true });
-		} else {
+		}
+		else {
 			await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 		}
 	}
+});
+
+const { QuickDB } = require('quick.db');
+const db = new QuickDB();
+
+client.on(Events.GuildMemberAdd, async (member) => {
+
+	const channelID = await db.get(`welchannel_${member.guild.id}`);
+	const channel = member.guild.channels.cache.get(channelID);
+	const message = `**Welcome to the server, ${member}!**`;
+
+	if (channelID == null) return;
+
+	channel.send(message);
 });
 
 client.login(token);
