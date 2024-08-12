@@ -16,11 +16,11 @@
   "dependencies": {
     "@discordjs/builders": "^1.8.2",
     "discord.js": "^14.15.3",
-    "undici": "^6.19.5"
+    "undici": "^6.19.7"
   },
   "devDependencies": {
-    "@eslint/js": "^9.7.0",
-    "eslint": "^9.8.0",
+    "@eslint/js": "^9.9.0",
+    "eslint": "^9.9.0",
     "globals": "^15.9.0"
   }
 }
