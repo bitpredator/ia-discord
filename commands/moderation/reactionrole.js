@@ -48,29 +48,29 @@ module.exports = {
 			const member = i.member;
 
 			if (i.guild.members.me.roles.highest.position < role1.position) {
-				i.update({ coontent: 'My role is below the roles that I\'m trying to give; I have shut this reaction role message down', ephemeral: true });
+				i.update({ content: 'My role is below the roles that I\'m trying to give; I have shut this reaction role message down', embeds: [], components: [] });
 				return;
 			}
 			else if (i.guild.members.me.roles.highest.position < role2.position) {
-				i.update({ coontent: 'My role is below the roles that I\'m trying to give; I have shut this reaction role message down', ephemeral: true });
+				i.update({ content: 'My role is below the roles that I\'m trying to give; I have shut this reaction role message down', embeds: [], components: [] });
 				return;
 			}
 			else if (i.guild.members.me.roles.highest.position < role3.position) {
-				i.update({ coontent: 'My role is below the roles that I\'m trying to give; I have shut this reaction role message down', ephemeral: true });
+				i.update({ content: 'My role is below the roles that I\'m trying to give; I have shut this reaction role message down', embeds: [], components: [] });
 				return;
 			}
 
-			if (i.setCustomId === 'button1') {
+			if (i.customId === 'button1') {
 				member.roles.add(role1);
 				i.reply({ content: `You now have the role: ${role1.name}`, ephemeral: true });
 			}
 
-			if (i.setCustomId === 'button2') {
+			if (i.customId === 'button2') {
 				member.roles.add(role2);
 				i.reply({ content: `You now have the role: ${role2.name}`, ephemeral: true });
 			}
 
-			if (i.setCustomId === 'button3') {
+			if (i.customId === 'button3') {
 				member.roles.add(role3);
 				i.reply({ content: `You now have the role: ${role3.name}`, ephemeral: true });
 			}
