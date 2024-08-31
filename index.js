@@ -1,14 +1,24 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const mongoose = require('mongoose');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
-
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-
 client.cooldowns = new Collection();
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
+
+(async () => {
+	try {
+		mongoose.set('strictQuery', false);
+		await mongoose.connect('mongodb+srv://username:password@...continue');
+		console.log('Connectd to DB');
+	}
+	catch (error) {
+		console.log(`Error: ${error}`);
+	}
+})();
 
 for (const folder of commandFolders) {
 	const commandsPath = path.join(foldersPath, folder);
