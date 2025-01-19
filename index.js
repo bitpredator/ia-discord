@@ -75,4 +75,18 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
+const { QuickDB } = require('quick.db');
+const db = new QuickDB();
+
+client.on(Events.GuildMemberAdd, async (member) => {
+
+	const channelID = await db.get(`welchannel_${member.guild.id}`);
+	const channel = member.guild.channels.cache.get(channelID);
+	const message = `**Welcome to the server, ${member}!**`;
+
+	if (channelID == null) return;
+
+	channel.send(message);
+});
+
 client.login(token);
